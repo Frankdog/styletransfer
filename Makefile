@@ -59,7 +59,8 @@ LDFLAGS +=  -lgomp
 LINK = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(WARNINGS)
 NVCC = nvcc $(CPPFLAGS) $(CUDA_ARCH)
 
-COMMON_FLAGS := $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))  -DUSE_CUDNN
+#COMMON_FLAGS := $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))  -DUSE_CUDNN
+COMMON_FLAGS := $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))
 NVCCFLAGS := -ccbin=$(CXX) -Xcompiler -fPIC -Xcompiler  -fopenmp
 DEBUG := 0
 # Debugging
